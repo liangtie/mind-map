@@ -46,12 +46,30 @@ npm install
 
 ### web
 
+构建 web 前需要修改 web/package.json，在 dependencies 中添加 "simple-mind-map": "file:../simple-mind-map" ，添加后的 dependencies 如下：
+
+```json
+  "dependencies": {
+    "@toast-ui/editor": "^3.1.5",
+    "codemirror": "^5.65.16",
+    "core-js": "^3.6.5",
+    "element-ui": "^2.15.1",
+    "highlight.js": "^10.7.3",
+    "katex": "^0.16.9",
+    "v-viewer": "^1.6.4",
+    "vue": "^2.6.11",
+    "vue-i18n": "^8.27.2",
+    "vue-router": "^3.5.1",
+    "vuex": "^3.6.2",
+    "xlsx": "^0.18.5",
+    "simple-mind-map": "file:../simple-mind-map"
+  },
+```
+
 ```bash
 cd web
 npm install
 npm run build
-# 这一步会报错This dependency was not found:
-#* quill-delta in ../simple-mind-map/src/plugins/RichText.js
 
 ```
 
@@ -66,4 +84,20 @@ npm run wsServe
 
 ### web
 
-## 调试
+```bash
+
+npm run serve
+
+```
+
+会在控制台输出类似如下内容：
+
+App running at:
+
+- Local: http://localhost:8080
+- Network: http://192.168.50.107:8080
+
+Note that the development build is not optimized.
+To create a production build, run npm run build.
+
+打开 http://localhost:8080 就可以访问了。
